@@ -1,0 +1,26 @@
+1. start.spring.io에 접속하셔서 minibank_apicomposite라는 프로젝트 생성
+   dependency는
+   
+  'org.springframework.boot:spring-boot-starter-web'
+	'org.springframework.cloud:spring-cloud-starter-openfeign'
+  'io.springfox:springfox-swagger2:2.7.0'
+  'io.springfox:springfox-swagger-ui:2.7.0'
+	'org.projectlombok:lombok:1.18.10'
+	'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix', version: '2.2.1.RELEASE'
+	'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+ 
+2. msa-minibank 프로젝의 settings.gradle 파일에 include
+   include 'minibank_apicomposite'
+ 
+3. application.properties 설정
+    호출할 서비스, Eureka Client
+ 
+4. minibank_apicomposite 프로젝트 구성
+	Main 클래스 
+	Controller 클래스
+	Domain 클래스
+	Service클래스
+	OpenFeign 클래스 (Customer 호출, Account 호출, Transfer 호출)
+ 
+5. API Gateway에 Route 정보 입력
+   application.properties
